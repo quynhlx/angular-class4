@@ -1,0 +1,10 @@
+td {
+    text-align: center;
+    padding: 4px 8px;
+}
+.name {
+    text-align: left;
+}
+.name span {
+    margin-right: 8px;
+}

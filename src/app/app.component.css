@@ -1,0 +1,11 @@
+:host { 
+    display: flex;
+}
+app-menu-side-bar {
+    height: 100vh;
+    width: 220px;
+    background-color: beige;
+}
+app-container {
+    flex: 1;
+}

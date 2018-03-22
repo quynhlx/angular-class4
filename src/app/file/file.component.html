@@ -1,0 +1,14 @@
+<td>
+  <input type="checkbox">
+</td>
+<td class="name" (click)="goTo(file.name)">
+  <span *ngIf="file.type === 'folder'" class="fa fa-folder"></span>
+  <span *ngIf="file.type !== 'folder'" class="fa fa-file"></span>
+  {{file.name}}</td>
+<td>{{file.modified | date: 'short'}}</td>
+<td>{{file.members}}</td>
+<td>
+  <button (click)="action(file)">
+    <i class="fa fa-plus"></i>
+  </button>
+</td>
