@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { MenuSideBarComponent } from './menu-side-bar/menu-side-bar.component';
 import { ContainerComponent } from './container/container.component';
 import { FileComponent } from './file/file.component';
+import { FilesComponent } from './files/files.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuControlComponent } from './menu-control/menu-control.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuSideBarComponent,
     ContainerComponent,
-    FileComponent
+    FileComponent,
+    FilesComponent,
+    HeaderComponent,
+    MenuControlComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,5 @@
-<h2>{{folder}}</h2>
-<table>
-    <thead>
-        <th></th>
-        <th>Name</th>
-        <th>Modified</th>
-        <th>Members</th>
-        <th>Actions</th>
-    </thead>
-    <tbody>
-        <tr app-file *ngFor='let file of files' 
-        [file]='file' (go)="changeFolder($event)"></tr>
-    </tbody>
-</table>
+<app-header></app-header>
+<div>
+  <app-files></app-files>
+  <app-menu-control></app-menu-control>
+</div>

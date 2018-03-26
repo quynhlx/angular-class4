@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    app-header {
+        height: 100px;
+    }
+    div {
+        flex: 1;
+        display: flex;
+        app-menu-control {
+            width: 200px;
+        }
+        app-files {
+            flex: auto;
+        }
+    }
+
+}
