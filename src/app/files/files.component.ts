@@ -14,7 +14,9 @@ export class FilesComponent implements OnInit {
 
   ngOnInit() {
     console.log('Init');
-    this.files = this._fileService.getFiles();
+    this._fileService.files.subscribe(newFiles => {
+      this.files = newFiles;
+    });
   }
 
   search(keyword: String) {

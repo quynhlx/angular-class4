@@ -1,11 +1,17 @@
 import { IFile } from './../interfaces/IFile';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class FileService {
+    private _files: BehaviorSubject<IFile[]> = new BehaviorSubject([]);
+
     constructor() {
-        this.files = this.getFiles();
+        this._files.next(this.getFiles());
     }
-    public files: IFile[] = [];
+
+    get files() {
+        return this._files.asObservable();
+    }
     getFiles(): IFile[] {
         return [{
             name: 'Angular',
@@ -26,12 +32,18 @@ export class FileService {
     }
 
     search(keyword: String) {
-        return this.files.filter(f =>
+        return this.getFiles().filter(f =>
             f.name
                 .toLowerCase()
                 .includes(
                 keyword.toLowerCase()
                 )
         );
+    }
+
+    addFolder(folder: IFile) {
+        this._files.getValue().push(folder);
+        const newFiles = this._files.getValue();
+        this._files.next(newFiles);
     }
 }

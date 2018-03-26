@@ -1,3 +1,8 @@
-<p>
-  menu-control works!
-</p>
+<ul>
+  <li (click)="addFolder(folderName)">New Folder</li>
+  <li>
+    <input type="text" name="" [(ngModel)]="folderName" placeholder="Folder Name">
+    <input type="text" name="" placeholder="Members">
+  </li>
+  <li>Delete Folder</li>
+</ul>
