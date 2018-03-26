@@ -1,5 +1,6 @@
 import { IFile } from '../interfaces/IFile';
 import { Component, OnInit } from '@angular/core';
+import { FileService } from '../providers/file.service';
 
 @Component({
   selector: 'app-files',
@@ -8,28 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilesComponent implements OnInit {
   files: IFile[];
-  constructor() { }
+  keyword: String;
+  constructor(private _fileService: FileService) { }
 
   ngOnInit() {
     console.log('Init');
-    this.files = [{
-      name: 'Angular',
-      modified: new Date(Date.now()),
-      members: ['Kian', 'Hue'],
-      type: 'folder'
-    }, {
-      name: 'Janeto Intro',
-      modified: new Date(Date.now()),
-      members: ['Kha', 'Linh'],
-      type: 'folder'
-    }, {
-      name: 'Nodejs',
-      modified: new Date(Date.now()),
-      members: ['Khanh', 'Huy'],
-      type: 'docx'
-    }];
+    this.files = this._fileService.getFiles();
   }
 
+  search(keyword: String) {
+    this.files = this._fileService.search(keyword);
+  }
   change() {
     this.files[0] = {
       name: 'Angular 5',

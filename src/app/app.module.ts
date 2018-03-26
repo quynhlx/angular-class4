@@ -9,6 +9,8 @@ import { FileComponent } from './file/file.component';
 import { FilesComponent } from './files/files.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuControlComponent } from './menu-control/menu-control.component';
+import { MembersPipe } from './pipes/members.pipe';
+import { FileService } from './providers/file.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { MenuControlComponent } from './menu-control/menu-control.component';
     FileComponent,
     FilesComponent,
     HeaderComponent,
-    MenuControlComponent
+    MenuControlComponent,
+    MembersPipe
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [FileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

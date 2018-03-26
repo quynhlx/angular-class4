@@ -1,3 +1,7 @@
+<div>
+    <input type="text" [(ngModel)]="keyword" placeholder="Search by file/folder name">
+    <button (click)="search(keyword)">Search</button>
+</div>
 <table>
   <thead>
       <th></th>
@@ -11,5 +15,3 @@
       [file]='file' (go)="changeFolder($event)"></tr>
   </tbody>
 </table>
-<button (click)="change()">Change</button>
-<button (click)="remove()">Remove</button>
