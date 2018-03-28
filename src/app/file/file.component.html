@@ -5,8 +5,10 @@
   <span *ngIf="file.type === 'folder'" class="fa fa-folder"></span>
   <span *ngIf="file.type !== 'folder'" class="fa fa-file"></span>
   {{file.name}}</td>
-<td>{{file.modified | date: 'short'}}</td>
-<td>{{file.members | members}}</td>
+<!-- <td>{{file.modified | date: 'short'}}</td>
+<td>{{file.members | members}}</td> -->
+<td></td>
+<td></td>
 <td>
   <button (click)="action(file)">
     <i class="fa fa-plus"></i>

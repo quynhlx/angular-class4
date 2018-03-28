@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenuControlComponent } from './menu-control/menu-control.component';
 import { MembersPipe } from './pipes/members.pipe';
 import { FileService } from './providers/file.service';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,8 @@ import { FileService } from './providers/file.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [FileService],
   bootstrap: [AppComponent]

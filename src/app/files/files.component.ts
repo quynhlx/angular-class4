@@ -17,6 +17,7 @@ export class FilesComponent implements OnInit {
     this._fileService.files.subscribe(newFiles => {
       this.files = newFiles;
     });
+    this._fileService.getFiles();
   }
 
   search(keyword: String) {
@@ -32,6 +33,12 @@ export class FilesComponent implements OnInit {
   }
   remove() {
     this.files.pop();
+  }
+
+  goToFolder(folder: IFile) {
+    if (folder.type === 'folder') {
+      this._fileService.getFiles({ search: '', parentId: folder._id });
+    }
   }
 
 }
