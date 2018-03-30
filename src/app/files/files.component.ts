@@ -21,7 +21,6 @@ export class FilesComponent implements OnInit {
   }
 
   search(keyword: String) {
-    this.files = this._fileService.search(keyword);
   }
   change() {
     this.files[0] = {

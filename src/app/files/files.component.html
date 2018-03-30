@@ -12,6 +12,6 @@
   </thead>
   <tbody>
       <tr app-file *ngFor='let file of files' 
-      [file]='file' (go)="changeFolder($event)" (click)="goToFolder(file)"></tr>
+      [file]='file' (click)="goToFolder(file)"></tr>
   </tbody>
 </table>

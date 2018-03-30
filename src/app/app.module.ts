@@ -12,6 +12,8 @@ import { MenuControlComponent } from './menu-control/menu-control.component';
 import { MembersPipe } from './pipes/members.pipe';
 import { FileService } from './providers/file.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [FileService],
   bootstrap: [AppComponent]
