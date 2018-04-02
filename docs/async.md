@@ -2,6 +2,8 @@
 
 >**Lập trình bất đồng bộ cũng giống như một lời hứa**
 
+## Callback
+
 Để hiểu đơn giản hãy hình dung ta đi vào một quán cafe, hiện tại có 2 kiểu thanh toán thường gặp nhất:
 
 - Kiểu lotte (lập trình đồng bộ): Vào quầy chọn món và `chờ` để đi vào bàn. Và chúng ta sẽ hiện tượng những một dãy người đứng chờ phí, và đây gọi là `block main thread`.
@@ -44,6 +46,8 @@ What the F*CK!!!
 ![callback_hell](images/cb_hell.png)
 
 Để giải quyết vấn đề này, các đấng đã ban cho chúng ta một nàng khác **Promise**
+
+## Promise
 
 **Hứa thật nhiều, thất hứa cũng thật nhiều**
 
@@ -90,7 +94,7 @@ Nếu bạn tinh ý thì bạn sẽ thấy promise bản chất cũng sử dụn
 - Hổ trợ `chaining`
 - Dễ bắt lỗi hơn.
 
-### Hỗ trợ `chaining`
+**Hỗ trợ `chaining`**
 
 Trở về ví dụ với ví dụ cưa gái
 
@@ -109,7 +113,7 @@ ket_ban_facebook()
 })
 ```
 
-### Dễ bắt lỗi hơn
+**Dễ bắt lỗi hơn**
 
 Chỉ cần một trong các hàm bị `xù` (`reject`) thì hàm `callback` trong catch sẽ được gọi.
 
@@ -160,7 +164,7 @@ async function kua_gai(ten_gai) {
 
 kui_gai("Hoa") // async function trả về một Promise
   .then(() => {
-    // abxc xyz
+    // abc xyz
   });
 ```
 
