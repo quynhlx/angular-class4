@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MenuSideBarComponent } from './menu-side-bar/menu-side-bar.component';
@@ -11,9 +14,8 @@ import { HeaderComponent } from './header/header.component';
 import { MenuControlComponent } from './menu-control/menu-control.component';
 import { MembersPipe } from './pipes/members.pipe';
 import { FileService } from './providers/file.service';
-import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthHttpInterceptor } from './providers/http.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [FileService],
+  providers: [
+    // để sử dụng được interceptor, chúng ta đưa vào providers với cú pháp như sau
+    // hiểu đơn giản:
+    // - Này angular mỗi lần gửi request thì chạy dùm tao cái interceptor này. Thanks you
+    // - Angular: You're welcome...
+    { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
+
+    FileService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
