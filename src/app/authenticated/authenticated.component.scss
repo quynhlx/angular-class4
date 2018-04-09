@@ -1,0 +1,13 @@
+@import '../../color';
+
+:host {
+    display: flex;
+}
+app-menu-side-bar {
+    height: 100vh;
+    width: $menu-width;
+    background-color: $red;
+}
+app-container {
+    flex: 1;
+}
