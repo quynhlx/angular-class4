@@ -1,6 +1,7 @@
-import { IFile } from '../interfaces/IFile';
 import { Component, OnInit } from '@angular/core';
-import { FileService } from '../providers/file.service';
+
+import { IFile } from '../../interfaces/IFile';
+import { FileService } from '../../providers/file.service';
 
 @Component({
   selector: 'app-files',

@@ -1,5 +1,5 @@
-import { IFile } from './../interfaces/IFile';
 import { Component } from '@angular/core';
+import { IFile } from '../../interfaces/IFile';
 
 @Component({
     selector: 'app-container',

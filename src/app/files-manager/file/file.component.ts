@@ -1,6 +1,15 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { IFile } from '../interfaces/IFile';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+  OnDestroy,
+} from '@angular/core';
+
+import { IFile } from '../../interfaces/IFile';
+
 @Component({
   selector: '[app-file]',
   templateUrl: './file.component.html',

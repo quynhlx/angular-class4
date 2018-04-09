@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FileService } from '../providers/file.service';
+import { FileService } from '../../providers/file.service';
 
 @Component({
   selector: 'app-menu-control',

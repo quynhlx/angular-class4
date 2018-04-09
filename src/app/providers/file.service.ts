@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 export class FileService {
     private _files: BehaviorSubject<IFile[]> = new BehaviorSubject([]);
     constructor(private http: HttpClient, private toastr: ToastrService) {
+      console.log('create file service');
     }
 
     get files() {
